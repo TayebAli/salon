@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-navbar color="pnk">
+    <button ion-button menuToggle>
+      <ion-icon name="apps"></ion-icon>
+    </button>
+    <ion-title text-center>الرئيسية</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="SearchPage()">
+        <ion-icon class="ion-icon" color="gold" name="md-search"></ion-icon>
+      </button>
+
+        <div>
+          <button id="notification-button" ion-button clear>
+            <ion-icon name="notifications">
+              <ion-badge id="notifications-badge" color="danger">5</ion-badge>
+            </ion-icon>
+          </button>
+        </div>
+      <!--</button>-->
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <div padding>
+    <ion-segment>
+      <ion-segment-button value="news" (click)="News()">
+        <ion-icon name="chatbubbles"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="bill" (click)="Bill()">
+        <ion-icon name="ios-card"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="Cart" (click)="ShoppingCart()">
+        <ion-icon name="ios-cart"></ion-icon>
+      </ion-segment-button>
+
+
+    </ion-segment>
+  </div>
+
+
+
+
+  <div *ngIf="salon == null">
+  <ion-card>
+    <img src="../assets/imgs/home/image.jpg" height="130" width="100%"/>
+    <div class="card-title">
+    <label>... ...
+       <ion-icon color="pnk3" style="font-size: x-large" name="heart"></ion-icon>
+      </label>
+    </div>
+    <div class="salon-icon">
+      <img src="../assets/imgs/home/logo.png" height="50" width="50">
+    </div>
+  </ion-card>
+  <ion-card>
+    <img src="../assets/imgs/home/image.jpg" height="130" width="100%"/>
+    <div class="card-title">
+    <label>... ...
+       <ion-icon color="pnk3" style="font-size: x-large" name="heart"></ion-icon>
+      </label>
+    </div>
+    <div class="salon-icon">
+      <img src="../assets/imgs/home/logo.png" height="50" width="50">
+    </div>
+  </ion-card>
+  <ion-card>
+    <img src="../assets/imgs/home/image.jpg" height="130" width="100%"/>
+    <div class="card-title">
+    <label>... ...
+       <ion-icon color="pnk3" style="font-size: x-large" name="heart"></ion-icon>
+      </label>
+    </div>
+    <div class="salon-icon">
+      <img src="../assets/imgs/home/logo.png" height="50" width="50">
+    </div>
+  </ion-card>
+</div>
+
+  <ion-card *ngFor="let salon of salon" (click)="salonID(salon.id, salon.name)">
+      <img src="{{salon.image}}" height="130" width="100%"/>
+      <div class="card-title">
+      <label>{{salon.name}}
+         <ion-icon style="font-size: x-large" color="pnk" name="heart"></ion-icon> 
+        </label>
+      </div>
+      <div class="salon-icon">
+        <img src="{{salon.logo}}" height="50" width="50">
+      </div>
+    </ion-card>
+  <ion-fab left bottom>
+    <!--<button ion-fab color="dark">-->
+    <button ion-fab color="pnk3">
+      <ion-icon color="ww" name="arrow-dropup"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab>
+        <ion-icon color="facebook" name="logo-facebook"></ion-icon>
+      </button>
+      <button ion-fab>
+        <ion-icon color="twitter" name="logo-twitter"></ion-icon>
+      </button>
+      <button ion-fab>
+        <ion-icon color="googleplus" name="logo-googleplus"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <!--<span class="fa fa-facebook">fa</span>-->
+</ion-content>

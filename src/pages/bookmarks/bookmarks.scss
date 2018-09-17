@@ -1,0 +1,97 @@
+page-bookmarks {
+  .ion-card {
+    position: relative;
+    text-align: center;
+    color: #dc9cc5;
+  }
+  .ion-card2 {
+    //position: relative;
+    //text-align: center;
+    //color: #ffffff;
+    //background-color: #dc67b8;
+  }
+  .ion-item {
+    //position: relative;
+    //text-align: center;
+    color: #dcbcd0;
+    //background-color: #dcbcd0;
+  }
+  //.ion-segment-button {
+  //  color: #c216dc;
+  //  background-color: #c216dc;
+  //
+  //}
+  .div {
+    background-color: white;
+
+  }
+  .div2 {
+    background-color: white;
+    color: white;
+
+  }
+
+  .p {
+    color: black;
+    size: 260em;
+    box-shadow: white;
+  }
+  .card-background-page {
+
+    ion-card {
+      position: relative;
+      text-align: center;
+      color: #dc9cc5;
+
+    }
+    .ion-icon {
+      color: #dc0fc9;
+    }
+
+    .card-title {
+      font-family: JF-Flat;
+
+      position: absolute;
+      top: 55%;
+      left: 60%;
+      font-size: 1.0em;
+      //width: 100%;
+      font-weight: bold;
+      color: #fff;
+      background-color: #dc0fc9;
+    }
+
+    .card-subtitle {
+      font-family: JF-Flat;
+      font-size: 0.80em;
+      position: absolute;
+      top: 75%;
+      left: 65%;
+      //width: 100%;
+      color: #fff;
+      background-color: #dc81ad;
+
+    }
+
+  }
+  .rating {
+    ul {
+      padding: 0px;
+
+      &.rating li {
+        padding: 5px 10px !important;
+        background: none;
+        color: #ffb400;
+
+        ion-icon {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  #map {
+    height: 400%;
+  }
+}
+
