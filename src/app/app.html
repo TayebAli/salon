@@ -1,0 +1,19 @@
+<ion-menu type="push" side="rigth" [content]="content" >
+  <ion-header type="push"  side="rigth">
+    <ion-toolbar type="push" side="rigth" color="pnk">
+      <ion-title >SaLoNaT</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content type="push" side="rigth" class="content">
+    <ion-list class="content">
+      <button class="content" menuClose icon-right ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" color="pnk"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

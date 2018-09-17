@@ -1,0 +1,96 @@
+<ion-header color="primary">
+  <ion-navbar color="pnk">
+    <button ion-button menuToggle>
+      <ion-icon name="apps"></ion-icon>
+    </button>
+    <ion-title>المتجر</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon class="ion-icon" color="gold" name="ios-notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<!--<ion-content class="list-avatar-page">-->
+<ion-content padding>
+
+<h1 text-center>قريبــا</h1>
+<h1 text-center>Soon</h1>
+  <ion-fab left bottom>
+    <!--<button ion-fab color="dark">-->
+    <button ion-fab>
+      <ion-icon name="arrow-dropup"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab>
+        <ion-icon color="facebook" name="logo-facebook"></ion-icon>
+      </button>
+      <button ion-fab>
+        <ion-icon color="twitter" name="logo-twitter"></ion-icon>
+      </button>
+      <button ion-fab>
+        <ion-icon color="googleplus" name="logo-googleplus"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+<!--<ion-row *ngFor="let item of theItems | async">
+    <!--<ion-item (click)="openPage(item)">-->
+      <!--<ion-avatar item-left>-->
+        <!--&lt;!&ndash;<img [src]="item.url">&ndash;&gt;-->
+      <!--</ion-avatar>-->
+      <!--&lt;!&ndash;{{  item.name }}&ndash;&gt;-->
+      <!--<ion-icon item-right name="remove-circle" (click)="decrement(item)"></ion-icon>-->
+      <!--<p item-right>-->
+        <!--&lt;!&ndash;{{ item.count}}&ndash;&gt;-->
+      <!--</p>-->
+      <!--<ion-icon item-right name="add-circle" (click)="increment(item)"></ion-icon>-->
+    <!--</ion-item>-->
+
+  <!--</ion-row>-->
+
+  <!--
+  <ion-row *ngFor="let item of theItems | async">
+    <ion-item (click)="openPage(item)">
+          <ion-avatar item-left>
+            <img [src]="item.url">
+          </ion-avatar>
+          {{item.name}}
+        </ion-item>
+        </ion-row>
+  -->
+  <!--
+  <ion-list>
+    <ion-item *ngFor="let item of theItems | async" >
+      <ion-avatar item-start>
+        <img src={{item.url}}/>
+      </ion-avatar>
+      <button ion-item (click)="openPage(item)">
+        {{item.name}}
+      </button>
+      <ion-note item-end>{{item.cost}}</ion-note>
+    </ion-item>
+  </ion-list>
+-->
+
+  <!--
+  <ion-list #dataList>
+    <ion-item-group>
+    <ion-item-sliding *ngFor="let item of theItems | async"  #slidingItem>
+      <ion-item (click)="openPage(item)">
+      <ion-avatar item-left>
+        <img [src]="item.url">
+      </ion-avatar>
+        {{item.name}}
+      <ion-item-options>
+        <button ion-button color="danger" (click)="delete(slidingItem, item)">
+          Delete
+        </button>
+      </ion-item-options>
+  </ion-item>
+    </ion-item-sliding>
+  </ion-item-group>
+  </ion-list>
+  -->
+
+</ion-content>

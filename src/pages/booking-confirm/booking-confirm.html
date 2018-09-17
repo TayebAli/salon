@@ -1,0 +1,51 @@
+<ion-header color="primary">
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="apps"></ion-icon>
+    </button>
+    <ion-title>تأكيد حجز: {{sname}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+
+
+    <ion-card class="card-background-page">
+      <img *ngFor="let item of salonPro" src="{{item.image}}" height="150" width="100%"/>
+      <div text-center class="card-title"> {{sname}}</div>
+      <!--<div text-center class="card-subtitle"> مع: {{this.selectStaff.substring(1, 10)}}</div>-->
+      <div *ngFor="let item of StaffList" text-center class="card-subtitle">مع: {{item.name}}</div>
+      <p text-center>راجع معلومات حجزك قبل التأكيد </p>
+
+      <ion-row>
+        <ion-col col-6>
+          <ion-icon name="calendar"></ion-icon>
+          &nbsp;<h3>{{theDay}}</h3></ion-col>
+        <ion-col col-6>
+          <ion-icon name="clock"></ion-icon>
+          &nbsp;<h3>{{theTime}}</h3></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let item of hadmat">
+        <ion-col col-6>
+          <ion-icon name="cash"></ion-icon>
+          &nbsp; {{item.price}}
+        </ion-col>
+        <ion-col col-6>
+          <ion-icon name="ios-happy"></ion-icon>
+          &nbsp; {{item.name}}
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-label color="primary" floating>كود الخصم</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-card>
+    <button ion-button block (click)="confirm()">حجز</button>
+  </ion-card>
+</ion-content>

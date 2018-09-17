@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> {{museum.Address}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card padding>
+    <h3>الاسم: {{museum.name}}</h3>
+    <p>العنوان : {{museum.Address}}</p>
+    <button ion-button (click)="goToSalon()" block>عرض</button>
+
+    <div #map id="map"></div>
+  </ion-card>
+</ion-content>

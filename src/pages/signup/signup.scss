@@ -1,0 +1,30 @@
+page-signup {
+  .ion-icon {
+    //color: white;
+  }
+  //ion-content {
+  //  background: #dc67b8 !important;
+  //  color: white !important;
+  //}
+
+  //ion-item {
+  //  background: #dc67b8 !important;
+  //  //color: #cefcc5 !important;
+  //}
+
+  ion-content ion-card {
+    background: transparent !important;
+
+  }
+
+}
+
+page-login ion-content {
+  //background: #dc67b8 !important;
+  //color: #ffffff !important;
+}
+
+page-login ion-content ion-card {
+  background: transparent !important;
+
+}

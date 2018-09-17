@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar color="pnk">
+    <ion-title>تسجيل جديد</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="md-woman"> الاسم رباعي</ion-icon>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="fullName" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="mail"> البريد الألكتروني:</ion-icon>
+      </ion-label>
+      <ion-input type="email" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="md-call"> رقم الهاتف</ion-icon>
+      </ion-label>
+      <ion-input type="number" [(ngModel)]="contact" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="key"> كلمة السر:</ion-icon>
+      </ion-label>
+      <ion-input type="password" [(ngModel)]="password" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="key">تاكيد كلمة السر</ion-icon>
+      </ion-label>
+      <ion-input type="password" [(ngModel)]="password_confirmation" required></ion-input>
+    </ion-item>
+
+    <ion-card>
+      <button ion-button block (click)="newadd()">
+        <ion-icon name="contacts"> تسجيل</ion-icon>
+      </button>
+    </ion-card>
+  </ion-list>
+</ion-content>

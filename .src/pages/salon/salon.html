@@ -1,0 +1,133 @@
+<ion-header color="primary">
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="apps"></ion-icon>
+    </button>
+    <ion-title>{{sname}}</ion-title>
+  </ion-navbar>
+  <ion-buttons end>
+    <button ion-button icon-only (click)="bookmark()">
+      <ion-icon class="ion-icon" color="gold" name="{{bookmarkicon}}"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+
+  <div padding>
+
+    <ion-segment [(ngModel)]="SALON">
+      <ion-segment-button value="staff">
+        <h3>
+          <ion-icon name="ios-people"></ion-icon>
+        </h3>
+      </ion-segment-button>
+
+      <ion-segment-button value="Serves">
+        <h3>
+          <ion-icon name="bowtie"></ion-icon>
+        </h3>
+      </ion-segment-button>
+
+      <!--<ion-segment-button value="mapF">-->
+      <ion-segment-button value="mapF" (click)="ShowMap()">
+        <h3>
+          <ion-icon name="ios-map"></ion-icon>
+        </h3>
+      </ion-segment-button>
+
+      <ion-segment-button value="about">
+        <h3>
+          <ion-icon name="md-information-circle"></ion-icon>
+        </h3>
+      </ion-segment-button>
+      <ion-segment-button value="images">
+        <h3>
+          <ion-icon ios="logo-instagram" md="logo-instagram"></ion-icon>
+          <!--<ion-icon ios="ios-images"></ion-icon>-->
+        </h3>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="SALON">
+    <ion-card class="ion-card" *ngSwitchCase="'about'">
+      <div *ngFor="let sal of salon" class="div">
+        <ion-card-content>
+          <p>{{sal.details}}</p>
+          <p>{{sal.Address}}</p>
+          <img src="{{sal.image}}" width=3060px height=190px/>
+        </ion-card-content>
+      </div>
+
+      <ion-row>
+        <span style="
+       margin-right: 17%;
+   ">
+          <rating class="rating" [(ngModel)]="rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+            starIconName="star" nullable="false" (ngModelChange)="rating()">
+          </rating>
+        </span>
+        <br>
+        <button ion-button icon-left block small (click)="booking()">
+          <div> حجز</div>
+        </button>
+
+      </ion-row>
+
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'Serves'">
+      <p style="background-color: #222; color: white">الخدمات</p>
+
+      <ion-list>
+        <ion-item *ngFor="let Serv of salon[0].serveries">
+          <ion-thumbnail item-left>
+            <img src="../../assets/imgs/home/serves.jpg">
+          </ion-thumbnail>
+          <h2>الخدمة: {{Serv.name}}</h2>
+          <p>السعر: {{Serv.price}} ج.س</p>
+          <button ion-button clear item-right (click)="Serves(Serv.id, Serv.price, Serv.name)">طلب</button>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+
+    <ion-card class="ion-card2" *ngSwitchCase="'staff'">
+      <p style="background-color: #222; color: white">فريق العمل</p>
+      <div *ngFor="let stf of salon[0].staff">
+        <ion-item class="ion-item">
+          <ion-avatar item-start>
+            <img src="{{serveUrl}}{{stf.image}}">
+          </ion-avatar>
+          <h1>
+            <P class="p">{{stf.name}} </P>
+          </h1>
+        </ion-item>
+
+      </div>
+    </ion-card>
+
+
+
+    <div *ngSwitchCase="'images'">
+      <ion-card>
+        <ion-card-header>
+          الصور
+        </ion-card-header>
+        <ion-card-content>
+          <div pager *ngFor="let slide of salon">
+
+            <img src="{{slide.photo}}" class="slide-image" />
+
+            <img src="{{slide.photo_two}}" class="slide-image" />
+
+            <img src="{{slide.photo_three}}" class="slide-image" />
+          </div>
+
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+  </div>
+</ion-content>

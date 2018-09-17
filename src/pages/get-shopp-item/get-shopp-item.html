@@ -1,0 +1,64 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>GetShoppItem</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-segment [(ngModel)]="opationItem">
+        <ion-segment-button value="home">المنتج
+            <ion-icon name="home"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="galary">الصور
+            <ion-icon name="images"></ion-icon>
+
+        </ion-segment-button>
+    </ion-segment>
+
+
+    <div [ngSwitch]="opationItem">
+        <ion-grid *ngSwitchCase="'images'">
+            <ion-row>
+                <div col-6 col-md-4 col-xl-3 class="image-con">
+                    <img imageViewer #imageToView (click)="onClick(imageToView)" src="assets/imgs/home/image.jpg">
+                </div>
+                <div col-6 col-md-4 col-xl-3 class="image-con">
+                    <img imageViewer #imageToView (click)="onClick(imageToView)">
+                </div>
+                <div col-6 col-md-4 col-xl-3 class="image-con" [style.background-image]="'url(assets/imgs/home/serves.jpg)'"><img
+                        #imageToView (click)="onClick(imageToView)" src="assets/imgs/home/serves.jpg">
+                </div>
+            </ion-row>
+        </ion-grid>
+
+
+        <div *ngSwitchCase="'home'">
+            <ion-card>
+                <ion-card-header>
+                    <img #imageOne class="imag" (click)="homeImage(imageOne)" hieght="50" width="50" src="{{item.image}}">
+                </ion-card-header>
+                <ion-card-content>
+                    <h2>{{item.name}}</h2>
+                    <h3>{{newQun}}*{{item.price}} ج.س</h3>
+                    <ion-badge>
+                        أجمالي {{newPrice}} ج.س</ion-badge>
+                </ion-card-content>
+
+                <div style="text-align:center;">
+                    <button ion-button small small (click)="add()" [disabled]="!isenabled">+</button>
+
+                    <button ion-button small (click)="min()" [disabled]="!isenabled2">-</button>
+                </div>
+            </ion-card>  
+                <button style="text-align:center;" ion-button large icon-right>
+                    Pay Now
+                    <ion-icon name="shop"></ion-icon>
+                </button>
+        </div>
+
+    </div>
+
+</ion-content>

@@ -1,0 +1,44 @@
+  <ion-header color="primary">
+    <ion-navbar color="pnk">
+      <button ion-button menuToggle>
+        <ion-icon name="apps"></ion-icon>
+      </button>
+      <ion-title text-center>تسجيل الدخول</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+
+    <img src="../assets/imgs/login/azafr.jpg" alt="" width="268" height="188">
+
+  </ion-card>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="mail"> البريد الألكتروني:</ion-icon>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="key"> كلمة السر:</ion-icon>
+      </ion-label>
+      <ion-input type="password" [(ngModel)]="password" required></ion-input>
+    </ion-item>
+
+    <ion-card>
+      <button ion-button block>
+        <ion-icon name="contact" (click)="Login()"> دخول</ion-icon>
+      </button>
+      <button ion-button block (click)="Singup()">
+        <ion-icon name="contacts"> تسجيل</ion-icon>
+      </button>
+    </ion-card>
+  </ion-list>
+</ion-content>

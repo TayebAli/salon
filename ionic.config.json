@@ -1,0 +1,7 @@
+{
+  "name": "SalonsApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,24 @@
+page-booking {
+  .cdd {
+    ion-select select {
+      padding: 0 16px 0 48px;
+      right: auto;
+      left: 0;
+      direction: rtl;
+      width: 350px
+    }
+
+    ion-select:after {
+      left: 16px;
+      right: auto;
+    }
+
+
+  }
+}
+.alert-md .alert-checkbox-icon{
+  left: -20px;
+}
+.alert-iso .alert-checkbox-icon{
+  left: -20px;
+}

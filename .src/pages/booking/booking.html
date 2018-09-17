@@ -1,0 +1,90 @@
+<ion-header color="primary">
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="apps"></ion-icon>
+    </button>
+    <ion-title>حجز: {{sname}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="cdd" padding>
+  <!--<ion-list>-->
+  <ion-card>
+    <ion-item style="margin-right: 1%">
+      <ion-label>الحجز مع: </ion-label>
+      <ion-select [(ngModel)]="StaffID" required>
+        <!--<div *ngFor="let stf of staff">-->
+        <ion-option style="margin-right: 1%" *ngFor="let stf of staff" [value]="stf.id">{{stf.name}}
+        </ion-option>
+        <!--</div>-->
+      </ion-select>
+    </ion-item>
+  </ion-card>
+  <!--</ion-list>-->
+
+
+  <!--server Card-->
+
+  <div *ngIf="sendServesID;else other_content">
+    <ion-card>
+      <ion-card-header>
+        نوع الخدمة: {{servesName}}
+      </ion-card-header>
+      <ion-card-content>
+        <h4>${{SendServesPrice}} ج.س</h4>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ng-template #other_content>
+    <ion-card>
+      <ion-list>
+        <ion-item>
+          <ion-label>نوع الخدمة</ion-label>
+          <!--<ion-select multiple="true" [(ngModel)]="selectServes" required>-->
+          <ion-select [(ngModel)]="selectServes" required>
+            <div *ngFor="let serve of serves">
+              <ion-option style="padding-right: 12px" [value]="serve.id">{{serve.name}} , ${{serve.price}}ج.س
+                <!--<ion-option style="padding-right: 12px" [value]="serve.id">{{serve.name}} , ${{serve.price}}ج.س-->
+              </ion-option>
+            </div>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ng-template>
+  <!--end Serve Card-->
+
+  <!--Time Card-->
+  <ion-card>
+    <ion-item>
+      <ion-label text>اختيار الزمن</ion-label>
+
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="theTime" required></ion-datetime>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label text>اختيار اليوم</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY " [(ngModel)]="theDay" min="{{min}}" required></ion-datetime>
+    </ion-item>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-item>
+      <ion-label floating>معلومات اضافية (اختياري).</ion-label>
+      <ion-input type="text" [(ngModel)]="feedback" maxlength="191" minlength="5"></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <!--End Time Card-->
+  <br>
+  <div style="text-align: center;">
+    <button ion-button (click)="sendBill()">حجز</button>
+  </div>
+
+</ion-content>

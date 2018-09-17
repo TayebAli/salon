@@ -1,0 +1,58 @@
+<ion-header color="primary">
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="apps"></ion-icon>
+    </button>
+    <ion-title>الطلبات السابقة</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let info of bills">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{url}}{{info.staff.image}}">
+      </ion-avatar>
+      <h2>{{info.staff.name}}</h2>
+      <p>{{info.salons.name}}</p>
+      <p>#{{info.id}}</p>
+    </ion-item>
+
+    <span color="red2"><hr color="red2"></span>
+
+    <ion-card class="last">
+      <P>.</P>
+      <h3>نوع الخدمة: {{info.serveries.name}}</h3>
+      <h3>السعر: {{info.serveries.price}} ج.س</h3>
+      <p>تاريخ: {{info.date}}</p>
+      <p>زمن: {{info.time}}</p>
+      <!--=>{info.status}} VALUE: {{item.description}}-->
+      <ion-card-title text-center>حالة الطلب</ion-card-title>
+      <div *ngIf="info.status == 1">
+        <div style="text-align: center;">
+          <ion-badge>تحت المراجعة</ion-badge>
+        </div>
+      </div>
+      <div *ngIf="info.status == 2">
+        <div style="text-align: center;">
+          <ion-badge color="secondary">مقبول</ion-badge>
+        </div>
+      </div>
+      <div *ngIf="info.status == 3">
+        <div style="text-align: center;">
+          <ion-badge color="red2">مرفوض</ion-badge>
+        </div>
+      </div>
+      <div *ngIf="info.status == 4">
+        <div style="text-align: center;">
+          <p>حالة الطلب</p>
+          <ion-badge color="red2">منتهي</ion-badge>
+        </div>
+      </div>
+    </ion-card>
+  </ion-card>
+</ion-content>
+
+
